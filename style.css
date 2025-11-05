@@ -1,0 +1,193 @@
+/* CUSTOM PROPERTIES */
+
+:root {
+  --font-headings: "Nunito", sans-serif;
+  --font-paragraphs: "Lora", serif;
+  --color-soft-white: #fafaf8;
+  --color-light-grey: #e5e3e0;
+  --color-dark-grey: #3b3b3b;
+  --color-text-dark-on-white-background: #555555;
+  --color-text-dark-on-lightgrey-background: #333333;
+
+  --header-height: 100px;
+}
+
+/* RESET */
+
+* {
+  box-sizing: border-box;
+
+  /* motverkar luddighet på texten i olika webbläsare */
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: grayscale;
+}
+
+html,
+body {
+  background-color: var(--color-soft-white);
+  margin: 0;
+  padding: 0;
+}
+
+figure {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* TYPOGRAFI */
+
+h1 {
+  font-family: var(--font-headings);
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+  font-weight: 600;
+}
+
+h2 {
+  font-family: var(--font-headings);
+  font-size: 2rem;
+  line-height: 2.5rem;
+  font-weight: 600;
+}
+
+h3 {
+  font-family: var(--font-headings);
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 600;
+}
+
+p {
+  font-family: var(--font-paragraphs);
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 400;
+}
+
+a {
+  font-family: var(--font-headings);
+  font-size: 1rem;
+  line-height: 1rem;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+h1,
+h2,
+h3,
+p,
+a {
+  color: var(--color-text-dark-on-white-background);
+}
+
+/* KOMPONENTER */
+.button {
+  height: 3rem;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  background-color: var(--color-dark-grey);
+  color: var(--color-soft-white);
+  font-family: var(--font-headings);
+  font-size: 1.25rem;
+  line-height: 2.5rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+/* HEADER */
+
+header {
+  display: grid;
+  grid-template-columns:
+    [full-start] minmax(32px, 1fr) [inner-start] minmax(0, 1440px) [inner-end] minmax(
+      32px,
+      1fr
+    )
+    [full-end];
+
+  position: fixed;
+  width: 100%;
+  background-color: var(--color-soft-white);
+  z-index: 999;
+}
+
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: var(--header-height);
+
+  /* border: 5px solid pink; */
+  grid-column: inner;
+
+  .menu-links {
+    display: flex;
+    list-style: none;
+    gap: 3rem;
+  }
+
+  .cart-button {
+    color: var(--color-text-dark-on-white-background);
+  }
+}
+
+/* CONTAINERN MED ALLT HUVUDINNEHÅLL */
+.container {
+  display: grid;
+  grid-template-columns:
+    [full-start] minmax(32px, 1fr) [inner-start] minmax(0, 1440px)
+    [inner-end] minmax(32px, 1fr);
+
+  row-gap: 5rem;
+}
+
+.hero,
+.ingress,
+.product-gallery,
+.promotion,
+.blog,
+.footer {
+  grid-column: inner;
+}
+
+/* INGRESS */
+.ingress {
+  height: 15rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* GALLERI */
+.product-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+
+  padding: 2rem;
+  gap: 2rem;
+
+  background-color: var(--color-light-grey);
+}
+
+.call-to-webshop {
+  background-color: var(--color-soft-white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .call-to-webshop__text {
+    color: var(--color-text-dark-on-white-background);
+    font-family: "Nunito", sans-serif;
+    font-size: 1.75rem;
+    line-height: 2rem;
+
+    margin-bottom: 3rem;
+  }
+}
