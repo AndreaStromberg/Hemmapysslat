@@ -97,6 +97,11 @@ a {
   display: inline-flex;
   align-items: center;
   text-decoration: none;
+
+  &.button--inverted {
+    background-color: var(--color-soft-white);
+    color: var(--color-text-dark-on-white-background);
+  }
 }
 
 /* HEADER */
@@ -189,5 +194,28 @@ header {
     line-height: 2rem;
 
     margin-bottom: 3rem;
+  }
+}
+
+/* ERBJUDANDERUTAN / PROMOTION */
+.promotion {
+  height: 28rem;
+  background-color: var(--color-dark-grey);
+  color: var(--color-soft-white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .promotion__text {
+    font-family: "Nunito", sans-serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    padding-bottom: 4rem;
+  }
+
+  .promotion__heading {
+    color: var(--color-soft-white);
   }
 }
