@@ -219,3 +219,42 @@ header {
     color: var(--color-soft-white);
   }
 }
+
+/* BLOGGSEKTION */
+
+.blog {
+  background-color: var(--color-light-grey);
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5rem 3rem;
+  gap: 3rem;
+
+  .card {
+    background-color: var(--color-soft-white);
+
+    /* Lägger till detta för att .card-content ska kunna ha ett flex-värde och ta upp hela utrymmet i kortet så att knappen hamnar längst ner */
+    display: flex;
+    flex-direction: column;
+
+    /* Gör så att utrymmet fördelas mellan de olika korten i bredd beroende på bildskärmsstorlek. Shorthand för flex-grow, flex-shrink, och flex-basis */
+    flex: 1 1 18rem;
+  }
+
+  .card__content {
+    color: var(--color-text-dark-on-white-background);
+    padding: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    /* Gör att denna sektion får ta upp återstående utrymme i kortet så att knappen hamnar längst ner. */
+    flex: 1;
+  }
+
+  /* Gör så att knappen kan hamna längst ner i kortet */
+  .card__content .button {
+    margin-top: auto;
+  }
+}
