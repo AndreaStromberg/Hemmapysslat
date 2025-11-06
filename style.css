@@ -141,21 +141,45 @@ header {
     gap: 3rem;
   }
 
-  .cart-button {
+  .cart-button,
+  .hamburger-menu-button {
     color: var(--color-text-dark-on-white-background);
     background: none;
     border: 0;
     padding: 0;
   }
-}
 
-/* .menu-link.menu-link--active {
-  font-weight: 600;
-} */
+  .header__buttons {
+    display: flex;
+    gap: 1rem;
+  }
+}
 
 .menu-link:hover {
   text-decoration: underline;
   color: var(--color-text-dark-on-white-background-hover);
+}
+
+.hamburger-menu-button {
+  visibility: hidden;
+}
+
+/* ENHETSANPASSNING HEADER */
+@media screen and (max-width: 840px) {
+  /* dölj menylänkarna */
+  .header__menu-links {
+    display: none;
+  }
+
+  /* visa hamburgermeny */
+  .hamburger-menu-button {
+    visibility: visible;
+  }
+
+  /* Gör headern lägre och samtidigt marginalen på hero mindre */
+  :root {
+    --header-height: 80px;
+  }
 }
 
 /* CONTAINERN MED ALLT HUVUDINNEHÅLL */
@@ -182,12 +206,29 @@ footer {
   margin-top: var(--header-height);
 }
 
+/* ENHETSANPASSNING HERO */
+
+/* Låta bilden ta upp hela skärmens bredd */
+
+@media screen and (max-width: 650px) {
+  .hero {
+    grid-column: full;
+  }
+}
+
 /* INGRESS */
 .ingress {
   height: 12rem;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* ENHETSANPASSNING INGRESS */
+@media screen and (max-width: 850px) {
+  .ingress {
+    height: 8rem;
+  }
 }
 
 /* GALLERI */
@@ -204,6 +245,7 @@ footer {
 
 .call-to-webshop {
   background-color: var(--color-soft-white);
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -219,9 +261,20 @@ footer {
   }
 }
 
+/* ENHETSANPASSNING GALLERI */
+
+/* Bilderna hamnar under varandra */
+@media screen and (max-width: 850px) {
+  .product-gallery {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
 /* ERBJUDANDERUTAN / PROMOTION */
 .promotion {
   height: 28rem;
+  padding: 1rem;
   background-color: var(--color-dark-grey);
   color: var(--color-soft-white);
   display: flex;
@@ -242,9 +295,18 @@ footer {
   }
 }
 
+/* ENHETSANPASSNING ERBJUDANDERUTAN / PROMOTION */
+/* Låta rutan ta upp hela skärmens bredd */
+@media screen and (max-width: 750px) {
+  .promotion {
+    grid-column: full;
+  }
+}
+
 /* BLOGGSEKTION */
 
 .blog {
+  /* grid-column: full; */
   background-color: var(--color-light-grey);
   display: flex;
   flex-wrap: wrap;
@@ -281,6 +343,13 @@ footer {
   }
 }
 
+/* ENHETSANPASSNING BLOGGSEKTION */
+@media screen and (max-width: 600px) {
+  .blog {
+    padding: 2rem 1rem;
+  }
+}
+
 /* FOOTER */
 
 footer {
@@ -290,6 +359,9 @@ footer {
 .footer__innercontainer {
   display: flex;
   justify-content: space-between;
+  gap: 3rem;
+
+  flex-wrap: wrap;
   color: var(--color-text-dark-on-white-background);
   padding: 0 3rem 5rem;
 }
