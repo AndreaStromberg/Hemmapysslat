@@ -388,3 +388,12 @@ footer {
   flex-direction: column;
   gap: 2rem;
 }
+
+.body-darkmode {
+  --color-soft-white: #3b3b3b;
+  --color-light-grey: #e5e3e0;
+  --color-dark-grey: #fafaf8;
+  --color-text-dark-on-white-background: #fafaf8;
+  --color-text-dark-on-white-background-hover: #fafaf8;
+  --color-text-dark-on-lightgrey-background: #333333;
+}
